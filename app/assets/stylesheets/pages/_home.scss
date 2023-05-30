@@ -1,1 +1,28 @@
 // Specific CSS for your home-page
+#navbar {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style-type:none;
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 12px;
+  background-color: rgb(35, 136, 30);
+  color: black;
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#webtitle {
+  background-color: blueviolet;
+  border-radius: 14px;
+  padding: 14px
+}
+
+#container {
+  background-color: black;
+}
