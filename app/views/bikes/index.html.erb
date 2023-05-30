@@ -1,14 +1,9 @@
-<html>
-  <head>
-  <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
 
   <div id="container">
     <div id="navbar">
       <ul>
         <li><a href="bikes"> Bikes </a></li>
-        <li><a href=""> Home </a></li>
+        <li><a href="/"> Home </a></li>
         <li><a href="bookings"> Bookings </a></li>
         <li><a href="profile"> Profile </a></li>
       </ul>
@@ -44,14 +39,11 @@
             <a href="http://127.0.0.1:3000/bikes" class="my-button">More Info</a>
           </div>
 
-          
+
 
         </div>
       </div>
-    </div>
-
-
-  </div>
+  <div>
   <% @bikes.each do |bike| %>
     <%= render "bike", bike: bike %>
     <%= link_to "show this bike", bike %>
@@ -59,5 +51,8 @@
   <%= link_to "Add a new bike ;)", new_bike_path %>
 
   <%= link_to "log_in", new_user_session_path %>
- </body>
-</html>
+  </div>
+    </div>
+
+
+  </div>
