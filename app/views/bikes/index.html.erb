@@ -20,5 +20,12 @@
 
 
   </div>
+  <% @bikes.each do |bike| %>
+    <%= render "bike", bike: bike %>
+    <%= link_to "show this bike", bike %>
+  <% end %>
+  <%= link_to "Add a new bike ;)", new_bike_path %>
+
+  <%= link_to "log_in", new_user_session_path %>
  </body>
 </html>
