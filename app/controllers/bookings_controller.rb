@@ -1,5 +1,5 @@
-class BookingController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+class BookingsController < ApplicationController
+  before_action :set_booking, only: %i[show edit update destroy]
 
   def index
     @booking = booking.all
@@ -17,7 +17,7 @@ class BookingController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.save
 
-    redirect_to booking_path(@restaurant)
+    redirect_to booking_path(@booking)
   end
 
   def edit
@@ -42,7 +42,7 @@ class BookingController < ApplicationController
     params.require(:booking).permit(:user_id, :bike_id, :Checkin, :Checkout, :total_price)
   end
 
-  def set_bike
+  def set_booking
     @bike = Bike.find(params[:id])
   end
 end
