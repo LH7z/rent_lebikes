@@ -9,7 +9,6 @@ class BikesController < ApplicationController
     @bike = Bike.new
   end
 
-  
   private
 
   def set_bike
