@@ -17,7 +17,7 @@ class BookingController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.save
 
-    redirect_to booking_path(@restaurant)
+    redirect_to booking_path(@booking)
   end
 
   def edit
