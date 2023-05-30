@@ -2,11 +2,10 @@ class BikesController < ApplicationController
   before_action :set_bike, only: %i[show edit update destroy]
 
   def index
-    @bike = Bike.all
+    @bikes = Bike.all
   end
 
   def show
-    @bike = Bike.new
   end
 
   def new
@@ -18,6 +17,7 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
+    @bike.user = current_user
     if @bike.save
       redirect_to @bike, notice: "bike was successfully created."
     else
