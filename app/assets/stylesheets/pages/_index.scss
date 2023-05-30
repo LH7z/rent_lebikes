@@ -6,9 +6,11 @@
   text-decoration: none;
   margin: 0 auto;
   padding: 12px;
+  background-size: cover;
   background-color: rgb(64, 77, 63);
   color: black;
   display: flex;
+  width: 100%;
 }
 
 ul {
@@ -17,7 +19,7 @@ ul {
   padding: 10px;
   justify-content: center;
   text-decoration: none;
-  margin-right: 100px;
+
   /*
   backgound-color: white;
   backgound-color: peach;
@@ -59,4 +61,9 @@ li {
 
 #bookings {
   display:table;
+}
+
+.endofpagebar {
+  background-color: black;
+  padding: 10px;
 }
