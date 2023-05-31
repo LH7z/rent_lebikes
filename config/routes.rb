@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :bikes, only: [:index, :show, :new, :edit, :create] do
-    resources :booking, only: [:show, :new, :create, :edit]
+    resources :bookings, only: [:show, :new, :create, :edit]
   end
 
   root to: "pages#home"
