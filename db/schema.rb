@@ -25,8 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_30_133533) do
 
   create_table "bookings", force: :cascade do |t|
     t.bigint "bike_id", null: false
-    t.integer "checkin"
-    t.integer "checkout"
+    t.date "checkin"
+    t.date "checkout"
     t.integer "totalprice"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

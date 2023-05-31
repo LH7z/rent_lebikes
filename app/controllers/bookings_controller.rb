@@ -1,21 +1,21 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
 
-  def index
-    #@bookings = Booking.where(user: current_user)
-  end
-
   def show
-    @booking = Booking.new
   end
 
   def new
     @booking = Booking.new
+    @bike = Bike.find(params[:bike_id])
   end
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.save
+    @booking.user = current_user
+    @booking.bike = Bike.find(params[:bike_id])
+    
+
+    return unless @booking.save
 
     redirect_to booking_path(@booking)
   end
@@ -38,11 +38,11 @@ class BookingsController < ApplicationController
 
   private
 
-  def booking_params
-    params.require(:booking).permit(:user_id, :bike_id, :Checkin, :Checkout, :total_price)
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
-  def set_booking
-    @bike = Bike.find(params[:id])
+  def booking_params
+    params.require(:booking).permit(:checkin, :checkout, :totalprice)
   end
 end
