@@ -1,40 +1,16 @@
-<html>
-  <head>
-  <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
 
-    <div id="navbar">
-      <ul>
-        <li><a href="bikes">Bikes</a></li>
-        <li><a href="profile.asp">Profile</a></li>
-        <li><a href="bookings.asp">Bookings</a></li>
-        <li><a href="about.asp"></a></li>
-      </ul>
-    </div>
-  <div id="container">
-    <div id="webtitle">
-      <h1>Rent LeBikes</h1>
-      <p>Travel far and cheap with your <strong>LeBike</strong> by your side!</p>
-    </div>
-      <% @bikes.each do |bike| %>
-    <div class="card">
+<div class="container d-grid">
+  <% @bikes.each do |bike| %>
+    <div class="card-product">
+      <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image"/>
+      <div class="card-product-infos">
         <%= render "bike", bike: bike %>
         <%= link_to "show this bike", bike %>
+      </div>
     </div>
-      <% end %>
-      <%= link_to "Add a new bike ;)", new_bike_path %>
 
-      <%= link_to "log_in", new_user_session_path %>
-
-  </div>
-  </div>
-  <div class="endofpagebar">
-    <ul>
-        <li><a href="">Contact Us</a></li>
-        <li><a href="">FaQ</a></li>
-        <li><a href="">Support Us</a></li>
-        <li><a href="">Climate Change</a></li>
-    </ul>
- </body>
-</html>
+  <% end %>
+  <%= link_to  new_bike_path  do %>
+      <i class="fa-solid fa-square-plus" id="button_add"></i>
+  <% end %>
+</div>
