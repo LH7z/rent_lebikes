@@ -1,5 +1,10 @@
-<%= render "bike", bike: @bike %>
-<%= link_to "Bike park", bikes_path %>
-<%= link_to bikes_path(@bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-<i class="fa-solid fa-trash"></i>
-<% end %>
+<div class="container">
+  <div class="card">
+    <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" alt="bike a venda" class="card_image">
+    <%= render "bike", bike: @bike %>
+    <%= link_to "Bike park", bikes_path %>
+    <%= link_to bikes_path(@bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+    <i class="fa-solid fa-trash"></i>
+    <% end %>
+  </div>
+</div>
