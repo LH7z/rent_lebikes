@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  resources :bikes, only: [:index, :show, :new, :edit, :create] do
+    resources :booking, only: [:show, :new, :create, :edit]
+  end
   root to: "pages#home"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :bikes, only: [:index, :show, :new, :edit]
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  resources :bikes, only: [:destroy]
 end
