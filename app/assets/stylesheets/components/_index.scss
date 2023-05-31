@@ -3,3 +3,9 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.d-grid {
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
