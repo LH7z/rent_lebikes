@@ -52,7 +52,18 @@ li {
 .card {
   display: inline-block;
   justify-content: space-between;
-  padding-right: 10px;
+  padding: 25px;
   margin: 10px;
   border-radius: 10px;
+  width: 280px;
+  height: 315px;
+  p {
+    flex-wrap: wrap;
+  }
+}
+
+.card_image {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 1em;
 }

@@ -11,7 +11,7 @@
     </div>
     <div id="navbar">
       <ul>
-        <li><a href="bikes">Bikes</a></li>
+        <li><a href="/">Home Page</a></li>
         <li><a href="profile.asp">Profile</a></li>
         <li><a href="bookings.asp">Bookings</a></li>
         <li><a href="about.asp"></a></li>
@@ -19,13 +19,14 @@
     </div>
       <% @bikes.each do |bike| %>
     <div class="card">
+        <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" alt="bike a venda" class="card_image">
         <%= render "bike", bike: bike %>
         <%= link_to "show this bike", bike %>
     </div>
       <% end %>
-      <%= link_to "Add a new bike ;)", new_bike_path %>
-
-      <%= link_to "log_in", new_user_session_path %>
+      <%= link_to  new_bike_path  do %>
+        <i class="fa-solid fa-square-plus"></i>
+      <% end %>
 
   </div>
  </body>
