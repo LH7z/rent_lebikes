@@ -1,0 +1,14 @@
+.media-links {
+  display: flex;
+  align-items: center;
+}
+.media-links a {
+  color: rgb(255, 255, 255);
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 60px 10px;
+}
+.media-links a:hover {
+  opacity: 1;
+}
