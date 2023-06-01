@@ -6,10 +6,13 @@
     <div class="card-trip-infos">
       <div>
         <%= render "my_bikes", bike: bike %>
+        <%= link_to bike do %>
+          <i class="fa-solid fa-eye" style="color: grey"></i>
+        <% end %>
       </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         <%= link_to bike_path(bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-          <i class="fa-solid fa-trash"></i>
+          <i class="fa-solid fa-trash" style="color: grey"></i>
         <% end %>
     </div>
   </div>

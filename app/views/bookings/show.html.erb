@@ -7,10 +7,9 @@
           <%# <%= link_to "add booking", new_bike_booking_path(@bike) %>
       </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <%= link_to booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <i class="fa-solid fa-trash" style="color: grey"></i>
+      <% end %>
     </div>
   </div>
-  <%= link_to "Bike park", bikes_path %>
-  <%= link_to booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-    <i class="fa-solid fa-trash"></i>
-  <% end %>
 </div>
