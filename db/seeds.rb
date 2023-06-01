@@ -7,4 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 user = User.new(email: "gugu@gmail.com", password: "666666666")
 user.save
-
+bike = Bike.new(price: "10,00", description: "muito boa", user: user)
+bike.save

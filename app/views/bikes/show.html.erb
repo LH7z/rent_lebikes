@@ -10,7 +10,9 @@
     </div>
   </div>
   <%= link_to "Bike park", bikes_path %>
-  <%= link_to bikes_path(@bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
-    <i class="fa-solid fa-trash"></i>
+  <% if @bike.user == current_user %>
+    <%= link_to bikes_path(@bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+      <i class="fa-solid fa-trash"></i>
+    <% end %>
   <% end %>
 </div>
