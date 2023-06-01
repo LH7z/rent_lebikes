@@ -1,0 +1,19 @@
+<div>
+
+  <p>
+    <strong>check-in:</strong>
+    <%= booking.checkin %>
+
+    <strong>check-out:</strong>
+    <%= booking.checkout %>
+  </p>
+  <p>
+    <strong>bike-booked:</strong>
+    Owner:<%= booking.user[:email] %>
+    Description:<%= booking.bike[:description] %>
+  </p>
+  <p>
+    <strong>Total price:</strong>
+    <%= booking.totalprice %>
+  </p>
+</div>

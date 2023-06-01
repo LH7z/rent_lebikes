@@ -10,6 +10,7 @@ class BikesController < ApplicationController
 
   def new
     @bike = Bike.new
+    @bike.user = current_user
   end
 
   def edit
