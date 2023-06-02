@@ -2,17 +2,22 @@ body {
  min-height: 100vh;
  display: flex;
  flex-direction: column;
+ background-image: url('https://wallpapercave.com/wp/wp2942819.jpg');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size:cover;
 }
 .card {
   display: flex;
   padding: 15px;
   margin: 10px;
-  border-radius: 10px;
+  border-radius: 20px;
   width: 280px;
   height: 315px;
   p {
     flex-wrap: wrap;
   }
+
 }
 
 .card_image {
@@ -28,4 +33,19 @@ body {
 a {
   padding-top: 12px;
   margin:0;
+}
+
+.card-product{
+  border-radius: 10px;
+}
+
+img {
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.card-trip {
+  border-radius: 10px;
+
 }
