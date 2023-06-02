@@ -11,7 +11,7 @@
           <%= render "booking", booking: booking  %>
         </div>
         <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        <%= link_to bike_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
           <i class="fa-solid fa-trash" style="color: grey"></i>
         <% end %>
       </div>
