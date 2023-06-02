@@ -77,3 +77,11 @@
 .card-trip {
   margin-bottom: 15px;
 }
+
+.grow {
+  transition: all .3s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
