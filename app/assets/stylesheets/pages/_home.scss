@@ -25,5 +25,31 @@
   border-radius: 4px;
   font-size: 16px;
   cursor: pointer;
-  
+}
+
+.my-button:hover {
+  color: white
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+span {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3em;
+  position: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-image: linear-gradient(rgb(114, 127, 145), rgb(103, 122, 187));
+  background-size: 100% 10px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+   transition: background-size .7s, background-position .5s ease-in-out;
+}
+
+span:hover {
+  color: black;
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
 }
