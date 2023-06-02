@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
 
-    <%= link_to "/", class: "navbar-brand" do %>
+    <%= link_to bikes_path, class: "navbar-brand" do %>
       <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-LDwt7wM3308zTf0PlTQ4YZLHZR6L6_zllA&usqp=CAU" %>
     <% end %>
 
@@ -21,7 +21,7 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "My bookings", bookings_path, class: "dropdown-item" %>
-              <%= link_to "My bikes", "bikes", class: "dropdown-item" %>
+              <%= link_to "My bikes", owned_bikes_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

@@ -5,6 +5,10 @@ class BikesController < ApplicationController
     @bikes = Bike.all
   end
 
+  def owned
+    @bikes = Bike.where(user_id: current_user)
+  end
+
   def show
   end
 
@@ -36,7 +40,7 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
-    redirect_to bikes_url, notice: "bike was successfully destroyed."
+    redirect_to bikes_path, notice: "bike was successfully destroyed."
   end
 
   private
