@@ -1,10 +1,13 @@
 <div class="container">
   <div class="card-trip">
-    <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" />
+  <% if @booking.bike.photo.attached? %>
+        <%= cl_image_tag @booking.bike.photo.key, class:"card-image", id:"index-image-card" %>
+      <% else %>
+        <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image" id="index-image-card"/>
+  <% end %>
     <div class="card-trip-infos">
       <div>
         <%= render "booking", booking: @booking  %>
-          <%# <%= link_to "Add booking", new_bike_booking_path(@bike) %>
       </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
       <%= link_to booking_path(@booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
