@@ -8,6 +8,10 @@ class BookingsController < ApplicationController
   def show
   end
 
+  def owned
+    @bookings = Booking.where(user_id: current_user)
+  end
+
   def new
     @booking = Booking.new
     @bike = Bike.find(params[:bike_id])

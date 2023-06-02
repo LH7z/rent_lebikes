@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :bookings, only: [:show, :index]
+  resources :bookings, only: [:show, :index] do
+    collection do
+      get :owned
+    end
+  end
+
   resources :bikes, only: [:index, :show, :new, :edit, :create] do
     resources :bookings, only: [:new, :create, :edit]
 
