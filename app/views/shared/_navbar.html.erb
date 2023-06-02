@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= "home-navbar" if action_name == 'home' %>">
   <div class="container-fluid">
 
     <%= link_to bikes_path, class: "navbar-brand" do %>
