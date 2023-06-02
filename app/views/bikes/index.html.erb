@@ -1,6 +1,6 @@
 <div class="container d-grid">
   <% @bikes.each do |bike| %>
-    <div class="card-product">
+    <div class="card-product grow">
     <% if bike.photo.attached? %>
         <%= cl_image_tag bike.photo.key, class:"card-image", id:"index-image-card" %>
       <% else %>
