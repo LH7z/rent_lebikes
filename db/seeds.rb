@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.new(email: "gugu@gmail.com", password: "666666666")
-user.save
-
+5.times do
+bike = Bike.new(price: "", description: "", user: user)
+bike.save
+end
