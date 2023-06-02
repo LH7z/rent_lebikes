@@ -1,7 +1,11 @@
 <div class="container d-grid">
   <% @bikes.each do |bike| %>
     <div class="card-product">
-      <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image" id="index-image-card"/>
+    <% if bike.photo.attached? %>
+        <%= cl_image_tag bike.photo.key, class:"card-image", id:"index-image-card" %>
+      <% else %>
+        <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image" id="index-image-card"/>
+    <% end %>
       <div class="card-product-infos">
         <%= render "bike", bike: bike %>
         <%= link_to bike do %>
