@@ -5,7 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-user = User.new(email: "gugu@gmail.com", password: "666666666")
+
+# 5.times do
+# bike = Bike.new(price: "", description: "", user: user)
+# bike.save
+# end
+
+user = User.new(email: "user1@test", password: "123456")
 user.save
-bike = Bike.new(price: "10,00", description: "muito boa", user: user)
-bike.save
+
+user2 = User.new(email: "user2@test", password: "123456")
+user.save

@@ -1,16 +1,35 @@
 
-
-<div class="cards">
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
+<div class="container">
+        <% @bookings.each do |booking| %>
+  <div class="card-trip">
+    <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" />
+    <div class="card-trip-infos">
+      <div>
+          <%= render "booking", booking: booking  %>
+          <%= link_to booking do %>
+            <i class="fa-solid fa-eye" style="color: grey"></i>
+          <% end %>
+      </div>
+      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+          <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash" style="color: grey"></i>
+          <% end %>
+    </div>
   </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-    Lunch
-  </div>
-
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-    Dinner
-  </div>
+  <% end %>
 </div>
 
+<script>
+    window.onscroll = function() {myFunction()};
+
+    var navbar-lewagon = document.querySelector('.navbar-lewagon');
+    var sticky = navbar-lewagon.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky");
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+</script>

@@ -1,0 +1,20 @@
+<div class="container">
+  <% @bookings.each do |booking| %>
+    <div class="card-trip">
+      <% if booking.bike.photo.attached? %>
+          <%= cl_image_tag booking.bike.photo.key, class:"card-image", id:"index-image-card" %>
+        <% else %>
+          <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image" id="index-image-card"/>
+      <% end %>
+      <div class="card-trip-infos">
+        <div>
+          <%= render "booking", booking: booking  %>
+        </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%= link_to booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+          <i class="fa-solid fa-trash" style="color: grey"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

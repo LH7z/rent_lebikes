@@ -5,11 +5,16 @@ class BikesController < ApplicationController
     @bikes = Bike.all
   end
 
+  def owned
+    @bikes = Bike.where(user_id: current_user)
+  end
+
   def show
   end
 
   def new
     @bike = Bike.new
+    @bike.user = current_user
   end
 
   def edit
@@ -35,7 +40,7 @@ class BikesController < ApplicationController
 
   def destroy
     @bike.destroy
-    redirect_to bikes_url, notice: "bike was successfully destroyed."
+    redirect_to bikes_path, notice: "bike was successfully destroyed."
   end
 
   private
@@ -45,6 +50,7 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(:bike).permit(:price, :description)
+    params.require(:bike).permit(:price, :description, :photo)
   end
+
 end

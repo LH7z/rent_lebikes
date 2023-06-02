@@ -1,7 +1,15 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show edit update destroy]
 
+  def index
+    @bookings = Booking.all
+  end
+
   def show
+  end
+
+  def owned
+    @bookings = Booking.where(user_id: current_user)
   end
 
   def new
@@ -12,8 +20,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.bike = Bike.find(params[:bike_id])
-    
+    bike = Bike.find(params[:bike_id])
+    @booking.bike = bike
+    @booking.totalprice = bike.price.to_i * (@booking.checkout - @booking.checkin)
 
     return unless @booking.save
 
@@ -33,7 +42,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
 
-    redirect_to booking_path
+    redirect_to owned_bookings_path, notice: "booking was successfully destroyed."
   end
 
   private

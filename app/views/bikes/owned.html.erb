@@ -1,23 +1,24 @@
+
 <div class="container">
+  <% @bikes.each do |bike| %>
   <div class="card-trip">
-    <% if @bike.photo.attached? %>
-        <%= cl_image_tag @bike.photo.key, class:"card-image", id:"index-image-card" %>
+    <% if bike.photo.attached? %>
+        <%= cl_image_tag bike.photo.key, class:"card-image", id:"index-image-card" %>
       <% else %>
         <img src="https://semexe.com/blog/wp-content/uploads/2022/03/Scalpel-personalizada-por-Black-tiger-74.jpg" class="card-image" id="index-image-card"/>
-  <% end %>
+    <% end %>
     <div class="card-trip-infos">
       <div>
-        <%= render "bike", bike: @bike %>
-          <%= link_to new_bike_booking_path(@bike) do %>
-          <i class="fa-solid fa-calendar-plus" style="color: grey"></i>
-          <% end %>
+        <%= render "my_bikes", bike: bike %>
+        <%= link_to bike do %>
+          <i class="fa-solid fa-eye" style="color: grey"></i>
+        <% end %>
       </div>
       <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      <% if @bike.user == current_user %>
-        <%= link_to bike_path(@bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
+        <%= link_to bike_path(bike), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } do %>
           <i class="fa-solid fa-trash" style="color: grey"></i>
         <% end %>
-      <% end %>
     </div>
   </div>
+        <% end %>
 </div>
