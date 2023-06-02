@@ -3,8 +3,6 @@
   background: rgb(253, 250, 250);
   border-bottom: 1px solid rgb(85, 65, 65);
   color: white;
-  margin-bottom: auto;
-
 }
 
 .indexpage {
@@ -18,4 +16,9 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.home-navbar {
+  position: absolute;
+  width: 100%;
 }
